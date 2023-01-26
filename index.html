@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body {
+        background-color: skyblue
+    }
+    .fab {
+        height: 24px;
+        width: 24px;
+        background-color: white;
+        display: flex;
+        
+        padding: 5px 5px;
+        gap: 8px;
+        border-radius: 24px;
+        border: transparent;
+        overflow: hidden;
+        transition: 500ms;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    }
+    
+    .fab:hover,
+    .fab.active {
+        /* width: calc(fit-content + 20px); */
+        width: 220px;
+    }
+    
+    .fab .plus {
+        transition: transform ease-in 300ms;
+        background: #1F2937;
+        color: #f3f4f6;
+        border-radius: 50%;
+        font-size: larger;
+        border: 0;
+        width: 24px;
+        height: 24px;
+    }
+    .fab:hover .plux,
+    .fab.active .plus {
+        transform: rotate(45deg);
+    }
+    
+    .fab .button {
+        display: none;
+    }
+    .fab:hover .button,
+    .fab.active .button {
+        display: inline;
+        padding: 0px 4px;
+        border-radius: 5px;
+        background: white;
+        border: 1px solid lightgray;
+        height: 24px;
+    }
+    </style>
+    <div class="fab" id="fab">
+        <button class="plus filter-button" title="filter" onclick="toggleActive()">+</button>
+        <button class="button filter-button filter-button-active">All</button>
+        <button class="button filter-button ">Active</button>
+        <button class="button filter-button ">Completed</button>
+    </div>
+    <script>
+        function toggleActive()  {
+            var e = document.getElementById("fab");
+              e.classList.toggle("active");
+           }
+    </script>
+</body>
+</html>
